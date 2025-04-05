@@ -1,0 +1,42 @@
+def show_question(question,options,correct_options):
+    print(question)
+
+    for i in range(len(options)):
+        print(f"{i+1}.{options[i]}")
+
+    answer = int(input("Enter Your answer:= "))
+
+    if answer == correct_options:
+        print("Correct!\n")
+        return 1
+    else:
+        print("Wrong!\n")
+        return 0
+
+def run_quiz():
+    questions = [
+        "What is the capital of India?",
+        "What is 2 + 2?",
+        "Which animal is known as the King of the Jungle?",
+        "Which planet is called the Red Planet?",
+        "What is the color of the sky on a clear day?",
+    ]
+
+    options = [
+         ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+         ["3", "4", "5", "6"],
+         ["Tiger", "Elephant", "Lion", "Zebra"],
+         ["Earth", "Venus", "Jupiter", "Mars"],
+         ["Green", "Blue", "Red", "Yellow"],
+    ]
+
+    correct_answer = [1, 2, 3, 4, 2]
+
+    score = 0
+
+    for i in range (len(questions)):
+        score = score + show_question(questions[i],options[i],correct_answer[i])
+
+        print(f"Your score is:{score}/{len(questions)}\n")
+        
+run_quiz()
